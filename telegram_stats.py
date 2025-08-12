@@ -189,7 +189,7 @@ def stats(words):
     lengths = pd.Series(words.keys()).apply(len)
     lengths_series = pd.Series([lengths.iloc[i] * words.iloc[i] for i in range(len(lengths))])
     print('Mean word appearence:', round(words.mean()), 'times')
-    print('Median word appearence:', int(words.median()), 'wimes')
+    print('Median word appearence:', int(words.median()), 'times')
     print('Amount of one-time words:', words[words==1].sum())
     print('Amount of words used more than once:', words[words!=1].sum())
     print('Mean amount of letters in a word:', round(lengths.mean()))
@@ -304,7 +304,7 @@ while True:
                 word = input('Write the word you want to search for ').lower()
                 try:
                     print(word.title(), ':', words_series[word].to_string())
-                    print(list(test.keys()).index(word), 'place')
+                    print(list(words.keys()).index(word), 'place')
                 except:
                     print('Word not found, try without stopwords')
             else:
